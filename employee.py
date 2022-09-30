@@ -21,7 +21,7 @@ class Employee:
             totPayment = self.salary
         
         #with commision or without
-        if self.numContract > 0:
+        if self.numContract > 0 :
             totPayment += self.numContract * self.commisionPerContract
         else:
             totPayment += self.commissionPay
@@ -29,15 +29,18 @@ class Employee:
         return totPayment
 
     def __str__(self):
-        statement = self.name + " works on" 
+        statement = f'{self.name} works on' 
         if self.numHours > 0:
-            statement += f' a contract of {self.numHours} hours at {self.salary}\hours'
+            statement += f' a contract of {self.numHours} hours at {self.salary}/hours'
         else:
-            statement += f'a monthly salary of {self.salary}'
+            statement += f' a monthly salary of {self.salary}'
         
         if self.numContract > 0:
-            statement +=  f'and receives a commission for {self.commissionPay} contract(s) at {self.commisionPerContract} contract'
-        statement += f'.Their total pay is {self.get_pay()}'
+            statement +=  f' and receives a commission for {self.commissionPay}/contract(s) at {self.commisionPerContract} contract'
+        else:
+            statement += f' and receives a bonus commission of {self.commissionPay}'
+
+        statement += f'.  Their total pay is {self.get_pay()}.'
         return   statement 
 
 
@@ -48,10 +51,10 @@ print(billie.get_pay())
 charlie = Employee('Charlie',25, 100)
 print(charlie.get_pay())
 # Renee works on a monthly salary of 3000 and receives a commission for 4 contract(s) at 200/contract.  Their total pay is 3800.
-renee = Employee('Renee', 3000, 0, 4, 200)
+renee = Employee('Renee', 3000, 0, 0, 4, 200)
 print(renee.get_pay())
 # Jan works on a contract of 150 hours at 25/hour and receives a commission for 3 contract(s) at 220/contract.  Their total pay is 4410.
-jan = Employee('Jan',  25, 150, 3, 220)
+jan = Employee('Jan',  25, 150, 0, 3, 220)
 print(jan.get_pay())
 # Robbie works on a monthly salary of 2000 and receives a bonus commission of 1500.  Their total pay is 3500.
 robbie = Employee('Robbie', 2000, 0, 0, 0, 1500)

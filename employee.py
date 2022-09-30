@@ -29,7 +29,17 @@ class Employee:
         return totPayment
 
     def __str__(self):
-        return self.name
+        statement = self.name + "works on" 
+        if self.numHours > 0:
+            statement += " a contract of" + self.numHours() + "hours at " + self.salary + "\hours"
+        else:
+            statement += "a monthly salary of" + self.salary
+        
+        if self.numContract > 0:
+            statement +=  "and receives a commission for" + self.commisionPerContract+ " contract(s) at" + self.commissionPay + "/contract"
+        else:
+            statement += ".Their total pay is" + self.get_pay(self)
+        return   statement 
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.

@@ -31,14 +31,13 @@ class Employee:
     def __str__(self):
         statement = self.name + "works on" 
         if self.numHours > 0:
-            statement += " a contract of" + self.numHours + "hours at " + self.salary + "\hours"
+            statement += f'a contract of {self.numHours} hours at {self.salary}\hours'
         else:
-            statement += "a monthly salary of" + self.salary
+            statement += f'a monthly salary of {self.salary}'
         
         if self.numContract > 0:
-            statement +=  "and receives a commission for" + self.commisionPerContract+ " contract(s) at" + self.commissionPay + "/contract"
-        else:
-            statement += ".Their total pay is" + self.get_pay(self)
+            statement +=  f'and receives a commission for {self.commisionPerContract} contract(s) at {self.commissionPay} contract'
+        statement += f'. Their total pay is{self.get_pay()}'
         return   statement 
 
 

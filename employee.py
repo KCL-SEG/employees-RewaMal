@@ -31,7 +31,7 @@ class Employee:
     def __str__(self):
         statement = f'{self.name} works on' 
         if self.numHours > 0:
-            statement += f' a contract of {self.numHours} hour at {self.salary}/hours'
+            statement += f' a contract of {self.numHours} hours at {self.salary}/hour'
         else:
             statement += f' a monthly salary of {self.salary}'
         

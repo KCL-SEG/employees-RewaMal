@@ -51,9 +51,8 @@ billie = Employee('Billie',4000)
 charlie = Employee('Charlie',25, 100)
 # Renee works on a monthly salary of 3000 and receives a commission for 4 contract(s) at 200/contract.  Their total pay is 3800.
 renee = Employee('Renee', 3000, 0, 4, 200)
-print(renee.get_pay())
 # Jan works on a contract of 150 hours at 25/hour and receives a commission for 3 contract(s) at 220/contract.  Their total pay is 4410.
-jan = Employee('Jan',  25, 220, 0, 3, 220)
+jan = Employee('Jan',  25, 150, 3, 220)
 print(jan.get_pay())
 # Robbie works on a monthly salary of 2000 and receives a bonus commission of 1500.  Their total pay is 3500.
 robbie = Employee('Robbie', 2000, 0, 0, 0, 1500)

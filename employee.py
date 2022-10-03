@@ -36,7 +36,7 @@ class Employee:
             statement += f' a monthly salary of {self.salary}'
         
         if self.numContract > 0:
-            statement +=  f' and receives a commission for {self.commissionPay}/contract(s) at {self.commisionPerContract} contract'
+            statement +=  f' and receives a commission for {self.numContract} contract(s) at {self.commisionPerContract}/contract'
         elif self.commissionPay > 0:
             statement += f' and receives a bonus commission of {self.commissionPay}'
 
